@@ -7,6 +7,8 @@ When using toolchanin, create directory `toolchain/stdincludes/gnu_stl` and copy
 
 You can also copy stl directory to your sources root, but in this case you will need to include it as header from your sources.
 
+**IMPORTANT NOTE:** you should link `gnustl_shared` to your native library for this to function normally!
+
 ## Usage
 Namespace `std::__ndk1` declared in headers is identical to `std` namespace, so if you need to use for example vector from this namespace, you include `<stl/vector.h>` and use `std::__ndk1::vector<int>`. 
 
