@@ -26,6 +26,8 @@ Consider using global macro instead, like so:
 
 String conversion can be easily done via `data()` method:
 ```
+#include <stl/string>
+
 std::string s = "a";
 STL::string stl_s = s.data();
 std::string std_s = stl_s.data();
