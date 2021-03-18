@@ -293,7 +293,7 @@ thread::thread(_Fp&& __f, _Args&&... __args)
     _TSPtr __tsp(new __thread_struct);
     typedef tuple<_TSPtr, typename decay<_Fp>::type, typename decay<_Args>::type...> _Gp;
     _VSTD::unique_ptr<_Gp> __p(
-            new _Gp(std::move(__tsp),
+            new _Gp(std::__ndk1::move(__tsp),
                     __decay_copy(_VSTD::forward<_Fp>(__f)),
                     __decay_copy(_VSTD::forward<_Args>(__args))...));
     int __ec = __libcpp_thread_create(&__t_, &__thread_proxy<_Gp>, __p.get());

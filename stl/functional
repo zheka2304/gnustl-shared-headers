@@ -1579,7 +1579,7 @@ public:
   const _Target& __target() const { return __f_; }
 
   _LIBCPP_INLINE_VISIBILITY
-  explicit __default_alloc_func(_Target&& __f) : __f_(std::move(__f)) {}
+  explicit __default_alloc_func(_Target&& __f) : __f_(std::__ndk1::move(__f)) {}
 
   _LIBCPP_INLINE_VISIBILITY
   explicit __default_alloc_func(const _Target& __f) : __f_(__f) {}
@@ -2435,7 +2435,7 @@ template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>&
 function<_Rp(_ArgTypes...)>::operator=(function&& __f) _NOEXCEPT
 {
-    __f_ = std::move(__f.__f_);
+    __f_ = std::__ndk1::move(__f.__f_);
     return *this;
 }
 

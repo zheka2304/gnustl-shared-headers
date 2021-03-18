@@ -30,8 +30,8 @@ public:
     typedef typename allocator_type::difference_type difference_type;
     typedef typename allocator_type::pointer         pointer;
     typedef typename allocator_type::const_pointer   const_pointer;
-    typedef std::reverse_iterator<iterator>          reverse_iterator;
-    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<iterator>          reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<const_iterator>    const_reverse_iterator;
 
     vector()
         noexcept(is_nothrow_default_constructible<allocator_type>::value);
@@ -136,8 +136,8 @@ public:
     typedef typename allocator_type::difference_type difference_type;
     typedef iterator                                 pointer;
     typedef const_iterator                           const_pointer;
-    typedef std::reverse_iterator<iterator>          reverse_iterator;
-    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<iterator>          reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<const_iterator>    const_reverse_iterator;
 
     class reference
     {
@@ -452,7 +452,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 __vector_base<_Tp, _Allocator>::__vector_base(allocator_type&& __a) _NOEXCEPT
     : __begin_(nullptr),
       __end_(nullptr),
-      __end_cap_(nullptr, std::move(__a)) {}
+      __end_cap_(nullptr, std::__ndk1::move(__a)) {}
 #endif
 
 template <class _Tp, class _Allocator>
@@ -929,7 +929,7 @@ private:
 
 #ifndef _LIBCPP_HAS_NO_DEDUCTION_GUIDES
 template<class _InputIterator,
-         class _Alloc = typename std::allocator<typename iterator_traits<_InputIterator>::value_type>,
+         class _Alloc = typename std::__ndk1::allocator<typename iterator_traits<_InputIterator>::value_type>,
          class = typename enable_if<__is_allocator<_Alloc>::value, void>::type
          >
 vector(_InputIterator, _InputIterator)
@@ -2874,7 +2874,7 @@ inline _LIBCPP_INLINE_VISIBILITY vector<bool, _Allocator>::vector(vector&& __v)
 #endif
     : __begin_(__v.__begin_),
       __size_(__v.__size_),
-      __cap_alloc_(std::move(__v.__cap_alloc_)) {
+      __cap_alloc_(std::__ndk1::move(__v.__cap_alloc_)) {
     __v.__begin_ = nullptr;
     __v.__size_ = 0;
     __v.__cap() = 0;

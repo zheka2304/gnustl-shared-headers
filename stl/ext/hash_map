@@ -308,7 +308,7 @@ template <class _Alloc>
 class __hash_map_node_destructor
 {
     typedef _Alloc                              allocator_type;
-    typedef std::allocator_traits<allocator_type>    __alloc_traits;
+    typedef std::__ndk1::allocator_traits<allocator_type>    __alloc_traits;
     typedef typename __alloc_traits::value_type::__node_value_type value_type;
 public:
     typedef typename __alloc_traits::pointer    pointer;
@@ -461,7 +461,7 @@ public:
 };
 
 template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = std::equal_to<_Key>,
-          class _Alloc = std::allocator<std::__ndk1::pair<const _Key, _Tp> > >
+          class _Alloc = std::__ndk1::allocator<std::__ndk1::pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS hash_map
 {
 public:
@@ -481,7 +481,7 @@ private:
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
     typedef typename std::__rebind_alloc_helper<
-        std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+        std::__ndk1::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
                          __key_equal,  __allocator_type>   __table;
@@ -495,7 +495,7 @@ private:
     typedef typename __table::__node                       __node;
     typedef __hash_map_node_destructor<__node_allocator>   _Dp;
     typedef std::unique_ptr<__node, _Dp>                   __node_holder;
-    typedef std::allocator_traits<allocator_type>          __alloc_traits;
+    typedef std::__ndk1::allocator_traits<allocator_type>          __alloc_traits;
 public:
     typedef typename __alloc_traits::pointer         pointer;
     typedef typename __alloc_traits::const_pointer   const_pointer;
@@ -735,7 +735,7 @@ operator!=(const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = std::equal_to<_Key>,
-          class _Alloc = std::allocator<std::__ndk1::pair<const _Key, _Tp> > >
+          class _Alloc = std::__ndk1::allocator<std::__ndk1::pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS hash_multimap
 {
 public:
@@ -754,7 +754,7 @@ private:
     typedef std::__ndk1::pair<key_type, mapped_type>               __value_type;
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
-    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+    typedef typename std::__rebind_alloc_helper<std::__ndk1::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
                          __key_equal,  __allocator_type>   __table;
@@ -766,7 +766,7 @@ private:
     typedef typename __table::__node                       __node;
     typedef __hash_map_node_destructor<__node_allocator>   _Dp;
     typedef std::unique_ptr<__node, _Dp>                         __node_holder;
-    typedef std::allocator_traits<allocator_type>               __alloc_traits;
+    typedef std::__ndk1::allocator_traits<allocator_type>               __alloc_traits;
 public:
     typedef typename __alloc_traits::pointer         pointer;
     typedef typename __alloc_traits::const_pointer   const_pointer;

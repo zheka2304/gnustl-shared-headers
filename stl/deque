@@ -33,8 +33,8 @@ public:
 
     typedef typename allocator_type::pointer         pointer;
     typedef typename allocator_type::const_pointer   const_pointer;
-    typedef std::reverse_iterator<iterator>          reverse_iterator;
-    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<iterator>          reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<const_iterator>    const_reverse_iterator;
 
     // construct/copy/destroy:
     deque() noexcept(is_nothrow_default_constructible<allocator_type>::value);
@@ -1584,7 +1584,7 @@ public:
 
 #ifndef _LIBCPP_HAS_NO_DEDUCTION_GUIDES
 template<class _InputIterator,
-         class _Alloc = typename std::allocator<typename iterator_traits<_InputIterator>::value_type>,
+         class _Alloc = typename std::__ndk1::allocator<typename iterator_traits<_InputIterator>::value_type>,
          class = typename enable_if<__is_allocator<_Alloc>::value, void>::type
          >
 deque(_InputIterator, _InputIterator)

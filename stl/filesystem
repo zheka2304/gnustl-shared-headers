@@ -2203,7 +2203,7 @@ private:
 
   _LIBCPP_INLINE_VISIBILITY
   void __assign_iter_entry(_Path&& __p, __cached_data __dt) {
-    __p_ = std::move(__p);
+    __p_ = std::__ndk1::move(__p);
     __data_ = __dt;
   }
 

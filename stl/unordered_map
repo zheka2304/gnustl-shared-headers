@@ -1640,7 +1640,7 @@ _Tp&
 unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](key_type&& __k)
 {
     return __table_.__emplace_unique_key_args(__k,
-        std::__ndk1::piecewise_construct, std::__ndk1::forward_as_tuple(std::move(__k)),
+        std::__ndk1::piecewise_construct, std::__ndk1::forward_as_tuple(std::__ndk1::move(__k)),
                                   std::__ndk1::forward_as_tuple()).first->__get_value().second;
 }
 #else // _LIBCPP_CXX03_LANG

@@ -843,7 +843,7 @@ public:
   }
 
   __simd_reference operator++() && {
-    return std::move(*this) = __ptr_->__get(__index_) + 1;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) + 1;
   }
 
   _Vp operator++(int) && {
@@ -853,7 +853,7 @@ public:
   }
 
   __simd_reference operator--() && {
-    return std::move(*this) = __ptr_->__get(__index_) - 1;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) - 1;
   }
 
   _Vp operator--(int) && {
@@ -863,43 +863,43 @@ public:
   }
 
   __simd_reference operator+=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) + __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) + __value;
   }
 
   __simd_reference operator-=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) - __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) - __value;
   }
 
   __simd_reference operator*=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) * __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) * __value;
   }
 
   __simd_reference operator/=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) / __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) / __value;
   }
 
   __simd_reference operator%=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) % __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) % __value;
   }
 
   __simd_reference operator>>=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) >> __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) >> __value;
   }
 
   __simd_reference operator<<=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) << __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) << __value;
   }
 
   __simd_reference operator&=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) & __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) & __value;
   }
 
   __simd_reference operator|=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) | __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) | __value;
   }
 
   __simd_reference operator^=(_Vp __value) && {
-    return std::move(*this) = __ptr_->__get(__index_) ^ __value;
+    return std::__ndk1::move(*this) = __ptr_->__get(__index_) ^ __value;
   }
 };
 

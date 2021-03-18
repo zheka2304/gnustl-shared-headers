@@ -1192,7 +1192,7 @@ __murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
     __v = __weak_hash_len_32_with_seeds(__s, __v.second * __k1, __x + __w.first);
     __w = __weak_hash_len_32_with_seeds(__s + 32, __z + __w.second,
                                         __y + __loadword<_Size>(__s + 16));
-    std::swap(__z, __x);
+    std::__ndk1::swap(__z, __x);
     __s += 64;
     __len -= 64;
   } while (__len != 0);

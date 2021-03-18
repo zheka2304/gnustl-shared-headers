@@ -37,8 +37,8 @@ public:
 
     typedef implementation-defined                   iterator;
     typedef implementation-defined                   const_iterator;
-    typedef std::reverse_iterator<iterator>          reverse_iterator;
-    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<iterator>          reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<const_iterator>    const_reverse_iterator;
     typedef unspecified                              node_type;              // C++17
     typedef INSERT_RETURN_TYPE<iterator, node_type>  insert_return_type;     // C++17
 
@@ -277,8 +277,8 @@ public:
 
     typedef implementation-defined                   iterator;
     typedef implementation-defined                   const_iterator;
-    typedef std::reverse_iterator<iterator>          reverse_iterator;
-    typedef std::reverse_iterator<const_iterator>    const_reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<iterator>          reverse_iterator;
+    typedef std::__ndk1::reverse_iterator<const_iterator>    const_reverse_iterator;
     typedef unspecified                              node_type;              // C++17
 
     class value_compare

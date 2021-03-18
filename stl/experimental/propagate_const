@@ -197,14 +197,14 @@ public:
   template <class _Up, enable_if_t<!is_convertible<_Up, _Tp>::value &&
                                  is_constructible<_Tp, _Up&&>::value,bool> = true>
   explicit _LIBCPP_CONSTEXPR propagate_const(propagate_const<_Up>&& __pu)
-      : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
+      : __t_(std::__ndk1::move(_VSTD_LFTS_V2::get_underlying(__pu)))
   {
   }
 
   template <class _Up, enable_if_t<is_convertible<_Up&&, _Tp>::value &&
                                  is_constructible<_Tp, _Up&&>::value,bool> = false>
   _LIBCPP_CONSTEXPR propagate_const(propagate_const<_Up>&& __pu)
-      : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
+      : __t_(std::__ndk1::move(_VSTD_LFTS_V2::get_underlying(__pu)))
   {
   }
 
@@ -231,7 +231,7 @@ public:
   template <class _Up>
   _LIBCPP_CONSTEXPR propagate_const& operator=(propagate_const<_Up>&& __pu)
   {
-    __t_ = std::move(_VSTD_LFTS_V2::get_underlying(__pu));
+    __t_ = std::__ndk1::move(_VSTD_LFTS_V2::get_underlying(__pu));
     return *this;
   }
 
